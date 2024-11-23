@@ -5,7 +5,7 @@ const ChatApp = () => {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
   const [username, setUsername] = useState('');
-  const [isDarkTheme, setIsDarkTheme] = useState(false); // Gestion du thème
+  const [isDarkTheme, setIsDarkTheme] = useState(false); 
 
   const handleSendMessage = () => {
     if (!username.trim()) {
@@ -36,7 +36,6 @@ const ChatApp = () => {
 
   return (
     <div className={`chat-container ${isDarkTheme ? 'dark' : ''}`}>
-      {/* Sélecteur de thème */}
       <div className="theme-toggle">
         <label>
           <input type="checkbox" checked={isDarkTheme} onChange={handleThemeToggle} />
@@ -44,10 +43,8 @@ const ChatApp = () => {
         </label>
       </div>
 
-      {/* Titre */}
       <h1 className="chat-title">Chat App</h1>
 
-      {/* Nom d'utilisateur */}
       <input
         type="text"
         value={username}
@@ -56,7 +53,6 @@ const ChatApp = () => {
         className="chat-input"
       />
 
-      {/* Liste des messages */}
       <div className="message-list">
         {messages.length === 0 ? (
           <p className="no-messages">No messages yet. Start the conversation!</p>
@@ -75,7 +71,6 @@ const ChatApp = () => {
         )}
       </div>
 
-      {/* Ajout d'émoticônes */}
       <div className="emoji-picker">
         <button onClick={() => handleAddEmoji('😊')}>😊</button>
         <button onClick={() => handleAddEmoji('😂')}>😂</button>
@@ -83,7 +78,6 @@ const ChatApp = () => {
         <button onClick={() => handleAddEmoji('🎉')}>🎉</button>
       </div>
 
-      {/* Zone de saisie */}
       <div className="input-container">
         <input
           type="text"
